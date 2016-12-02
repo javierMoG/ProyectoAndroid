@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragmento2 extends Fragment {
+public class InsertarIngreso extends Fragment {
 
 
-    public Fragmento2() {
+    public InsertarIngreso() {
         // Required empty public constructor
     }
 
@@ -23,7 +23,7 @@ public class Fragmento2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_fragmento2, container, false);
+        View view = inflater.inflate(R.layout.Insertar_Ingreso, container, false);
         return view;
     }
 

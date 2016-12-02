@@ -20,7 +20,7 @@ public class Fragmento4 extends Fragment {
 
     WebView wb;
     Button regresar;
-    Fragmento1 f1;
+    PantallaPrincipal f1;
     FragmentManager fm;
     FragmentTransaction ft;
 
@@ -33,7 +33,7 @@ public class Fragmento4 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_fragmento4, container, false);
+        View view= inflater.inflate(R.layout.Pagina_web, container, false);
 
         wb= (WebView) view.findViewById(R.id.WebView);
         regresar= (Button) view.findViewById(R.id.button2);
@@ -44,7 +44,7 @@ public class Fragmento4 extends Fragment {
         regresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                f1= new Fragmento1();
+                f1= new PantallaPrincipal();
                 fm= getFragmentManager();
                 ft= fm.beginTransaction();
                 ft.replace(R.id.activity_main, f1);

@@ -14,7 +14,7 @@ import android.widget.Button;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragmento1 extends Fragment {
+public class PantallaPrincipal extends Fragment {
 
     Button b1;
     Button b2;
@@ -26,7 +26,7 @@ public class Fragmento1 extends Fragment {
     FragmentTransaction ft;
 
 
-    public Fragmento1() {
+    public PantallaPrincipal() {
 
     }
 
@@ -39,8 +39,8 @@ public class Fragmento1 extends Fragment {
         b1= (Button) view.findViewById(R.id.BtnEstablecerIM);
         b2= (Button) view.findViewById(R.id.BtnIngresarGasto);
         b3= (Button) view.findViewById(R.id.BtnConsultaWeb);
-        f2= new Fragmento2();
-        f3= new Fragmento3();
+        f2= new InsertarIngreso();
+        f3= new InsertarGasto();
         f4= new Fragmento4();
         fm= this.getFragmentManager();
 
