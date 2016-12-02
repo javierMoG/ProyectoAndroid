@@ -10,35 +10,29 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/BtnEstablecerIM"
-        android:layout_marginTop="65dp"
-        android:text="Establecer Ingreso "
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/BtnConsultaWeb"
-        android:layout_alignStart="@+id/BtnConsultaWeb" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/BtnConsultaWeb"
-        android:text="Consulta precio dolar"
         android:layout_marginTop="25dp"
         android:layout_below="@+id/BtnIngresarGasto"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="Precio del dolar" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
         android:layout_marginTop="21dp"
         android:id="@+id/BtnIngresarGasto"
         android:text="Ingresar Gasto"
         android:layout_below="@+id/BtnEstablecerIM"
-        android:layout_alignLeft="@+id/BtnConsultaWeb"
-        android:layout_alignStart="@+id/BtnConsultaWeb"
-        android:layout_marginStart="15dp" />
+        android:layout_alignRight="@+id/BtnConsultaWeb"
+        android:layout_alignEnd="@+id/BtnConsultaWeb" />
 
-    <!--ESTO ES UNSFDSLKFJ-->
-    <!--LOLOLOLOLOLOLOLO-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/BtnEstablecerIM"
+        android:layout_marginTop="67dp"
+        android:text="Establecer Ingreso "
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
