@@ -25,9 +25,7 @@ public class Saldo extends Fragment {
     FragmentManager fm;
     FragmentTransaction ft;
 
-    public Saldo() {
-        // Required empty public constructor
-    }
+    public Saldo() {}
 
 
     @Override

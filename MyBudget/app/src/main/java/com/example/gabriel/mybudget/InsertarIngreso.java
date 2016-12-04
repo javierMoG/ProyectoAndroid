@@ -27,15 +27,13 @@ public class InsertarIngreso extends Fragment {
     TextView presupuesto;
 
 
-    public InsertarIngreso() {
-        // Required empty public constructor
-    }
+    public InsertarIngreso() {}
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.insertar_ingreso, container, false);
 
         regresar = (Button)view.findViewById(R.id.Regresar);
@@ -74,7 +72,6 @@ public class InsertarIngreso extends Fragment {
                 ft.commit();
             }
         });
-
 
         return view;
     }

@@ -43,19 +43,6 @@ public class InterfazBD {
         return clave;
     }
 
-    public void insertarDatosPrueba(){
-        ContentValues valores;
-        open();
-        valores=new ContentValues();
-        valores.put("tipo","comida");
-        valores.put("gasto", "$100");
-        db.insert("tablaprueba", null, valores);
-        valores=new ContentValues();
-        valores.put("tipo","entretenimiento");
-        valores.put("gasto", "$220");
-        db.insert("tablaprueba", null, valores);
-    }
-
     public void inicializarP(){
         ContentValues valores;
         open();
@@ -81,11 +68,6 @@ public class InterfazBD {
         open();
         String query="select * from tablaprueba;";
         res=db.rawQuery(query,null);
-        /*if(res.getCount()==0){
-            insertarDatosPrueba();
-            res=db.rawQuery(query,null);
-        }*/
-        //cerrar bd?
         return res;
     }
 

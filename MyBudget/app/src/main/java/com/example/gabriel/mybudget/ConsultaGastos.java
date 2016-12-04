@@ -23,15 +23,13 @@ public class ConsultaGastos extends Fragment {
     Button regresar, borrar;
     InterfazBD iBD;
 
-    public ConsultaGastos() {
-        // Required empty public constructor
-    }
+    public ConsultaGastos() {}
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View v= inflater.inflate(R.layout.fragment_consulta_gastos, container, false);
 
         regresar= (Button) v.findViewById(R.id.Regresar);
