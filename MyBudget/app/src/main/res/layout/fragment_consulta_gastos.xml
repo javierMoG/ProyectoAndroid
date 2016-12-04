@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.gabriel.mybudget.ConsultaGastos">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="400dp"
+       android:id="@+id/Lista">
+   </RelativeLayout>
+
+    <Button
+        android:text=" Eliminar Gasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:id="@+id/EliminarGasto"
+        android:layout_marginBottom="11dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Regresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:id="@+id/Regresar"
+        android:layout_alignBaseline="@+id/EliminarGasto"
+        android:layout_alignBottom="@+id/EliminarGasto"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

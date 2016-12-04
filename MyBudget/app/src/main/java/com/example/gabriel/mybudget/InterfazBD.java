@@ -22,12 +22,22 @@ public class InterfazBD {
         con.close();
     }
 
+    public long insertarIngreso(String cantidad){
+        ContentValues valores;
+        open();
+        valores=new ContentValues();
+        valores.put("cantidad", "$"+cantidad);
+        long clave=db.insert("ingreso", null, valores);
+        close();
+        return clave;
+    }
+
     public long insertarDatos(String tipo, String gasto){
         ContentValues valores;
         open();
         valores=new ContentValues();
         valores.put("tipo",tipo);
-        valores.put("gasto","$"+gasto);
+        valores.put("gasto", "$"+gasto);
         long clave=db.insert("tablaprueba", null, valores);
         close();
         return clave;
@@ -36,7 +46,6 @@ public class InterfazBD {
     public void insertarDatosPrueba(){
         ContentValues valores;
         open();
-
         valores=new ContentValues();
         valores.put("tipo","comida");
         valores.put("gasto", "$100");
@@ -45,6 +54,14 @@ public class InterfazBD {
         valores.put("tipo","entretenimiento");
         valores.put("gasto", "$220");
         db.insert("tablaprueba", null, valores);
+    }
+
+    public void inicializarP(){
+        ContentValues valores;
+        open();
+        valores= new ContentValues();
+        valores.put("cantidad", "$0");
+        db.insert("ingreso", null, valores);
     }
 
     public String traerDato(long clave){
@@ -64,18 +81,72 @@ public class InterfazBD {
         open();
         String query="select * from tablaprueba;";
         res=db.rawQuery(query,null);
-        if(res.getCount()==0){
+        /*if(res.getCount()==0){
             insertarDatosPrueba();
             res=db.rawQuery(query,null);
-        }
+        }*/
         //cerrar bd?
         return res;
+    }
+
+    public double totalGastos(){
+        Cursor cur=null;
+        String[] datos;
+        double total=0;
+        int cont=0;
+        open();
+        String query="select gasto from tablaprueba;";
+        cur=db.rawQuery(query,null);
+        datos= new String[cur.getCount()];
+        while (cont<datos.length){
+            cur.moveToNext();
+            datos[cont]= cur.getString(0).substring(1);
+            cont++;
+        }
+        total= cuenta(datos);
+        cur.close();
+        close();
+        return total;
+    }
+
+    public double cuenta(String[] arr){
+        int i=0;
+        double tot=0;
+        while(i<arr.length){
+            double aux= Double.parseDouble(arr[i]);
+            tot+=aux;
+            i++;
+        }
+        return tot;
+    }
+
+    public String consultaPresupuesto(){
+        open();
+        String query="select cantidad from ingreso;";
+        Cursor c=db.rawQuery(query,null);
+        if(c.getCount()==0){
+            inicializarP();
+            c=db.rawQuery(query,null);
+        }
+        c.moveToNext();
+        String res=c.getString(0);
+        c.close();
+        close();
+        return res;
+    }
+
+    public void borrarIngreso(){
+        open();
+        String query="delete from ingreso;";
+        db.execSQL(query);
+        close();
     }
 
     public void borrarDatos(long id){
         open();
         String query="delete from tablaprueba where _id="+id+";";
         db.execSQL(query);
+        close();
     }
 }
 

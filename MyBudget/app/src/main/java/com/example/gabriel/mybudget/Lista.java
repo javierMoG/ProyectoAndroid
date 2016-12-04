@@ -1,8 +1,6 @@
 package com.example.gabriel.mybudget;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+
 import android.app.ListFragment;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -14,7 +12,7 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 //El listFragment siempre usa un ListView en la interfaz grafica
-public class FragmentoLista extends ListFragment {
+public class Lista extends ListFragment {
 
     //Clase donde estan los metodos de la bd
     InterfazBD iBD;
@@ -24,7 +22,6 @@ public class FragmentoLista extends ListFragment {
     SimpleCursorAdapter sca;
     //El fragmento...
     ListView lv;
-    Fragment lista;
 
     /* (non-Javadoc)
      * @see android.app.ListFragment#onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
@@ -71,12 +68,9 @@ public class FragmentoLista extends ListFragment {
         if(iBD==null){
             iBD=new InterfazBD(this.getActivity());
         }
-        iBD.borrarDatos(id);
 
-        lista= new FragmentoLista();
-        FragmentManager fm= getFragmentManager();
-        FragmentTransaction ft= fm.beginTransaction();
-        ft.replace(R.id.Lista2, lista);
-        ft.commit();
+        String s=iBD.traerDato(id);
+        Toast t=Toast.makeText(getActivity(),s, Toast.LENGTH_LONG);
+        t.show();
     }
 }

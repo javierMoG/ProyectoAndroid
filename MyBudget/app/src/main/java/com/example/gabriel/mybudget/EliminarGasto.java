@@ -8,23 +8,20 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Button;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragmento4 extends Fragment {
+public class EliminarGasto extends Fragment {
 
-    WebView wb;
     Button regresar;
-    PantallaPrincipal f1;
+    Fragment lista, f1;
     FragmentManager fm;
     FragmentTransaction ft;
 
-    public Fragmento4() {
+    public EliminarGasto() {
         // Required empty public constructor
     }
 
@@ -33,33 +30,26 @@ public class Fragmento4 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.Pagina_web, container, false);
+        View v= inflater.inflate(R.layout.fragment_eliminar_gasto, container, false);
 
-        wb= (WebView) view.findViewById(R.id.WebView);
-        regresar= (Button) view.findViewById(R.id.button2);
+        lista= new FragmentoLista();
+        fm= getFragmentManager();
+        ft= fm.beginTransaction();
+        ft.add(R.id.Lista2, lista);
+        ft.commit();
 
-        wb.loadUrl("http://mx.cotizacion-dolar.com/mexico/economia/bolsa_mexicana_valores/");
-        wb.setWebViewClient(new MiWebViewClient());
-
+        regresar= (Button) v.findViewById(R.id.regresar);
         regresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                f1= new PantallaPrincipal();
-                fm= getFragmentManager();
+                f1= new ConsultaGastos();
                 ft= fm.beginTransaction();
                 ft.replace(R.id.activity_main, f1);
                 ft.commit();
             }
         });
 
-        return view;
+        return v;
     }
 
-}
-class MiWebViewClient extends WebViewClient {
-    @Override
-    public boolean shouldOverrideUrlLoading(WebView view, String url) {
-        view.loadUrl(url);
-        return true;
-    }
 }

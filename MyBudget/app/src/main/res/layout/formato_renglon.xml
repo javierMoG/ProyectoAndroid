@@ -6,19 +6,13 @@
 
     <!-- como la tabla tablaprueba tiene dos columnas, declaro dos textviews para mostrarlas -->
     <TextView
-        android:id="@+id/texto1"
+        android:id="@+id/columna1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dp" />
     <TextView
-        android:id="@+id/texto2"
+        android:id="@+id/columna2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dp" />
-    <TextView
-        android:id="@+id/texto3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding= "5dp"/>
-
 </LinearLayout>

@@ -6,33 +6,60 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/BtnConsultaWeb"
-        android:layout_marginTop="25dp"
-        android:layout_below="@+id/BtnIngresarGasto"
-        android:layout_centerHorizontal="true"
-        android:text="Precio del dolar" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        android:id="@+id/BtnIngresarGasto"
-        android:text="Ingresar Gasto"
-        android:layout_below="@+id/BtnEstablecerIM"
-        android:layout_alignRight="@+id/BtnConsultaWeb"
-        android:layout_alignEnd="@+id/BtnConsultaWeb" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/BtnEstablecerIM"
-        android:layout_marginTop="67dp"
-        android:text="Establecer Ingreso "
+    <RelativeLayout
+        android:layout_width="340dp"
+        android:layout_height="500dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true">
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnIngresarGasto"
+            android:text="Ingresar Gasto"
+            android:layout_alignTop="@+id/BtnEstablecerIM"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="37dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnEstablecerIM"
+            android:layout_marginTop="60dp"
+            android:text="Establecer presupuesto"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:text="Saldo actual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnSaldo"
+            android:layout_below="@+id/BtnEstablecerIM"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="26dp" />
+
+        <Button
+            android:text="Consultar gastos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Consulta"
+            android:layout_below="@+id/BtnIngresarGasto"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="26dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnConsultaWeb"
+            android:text="Precio del dolar"
+            android:layout_below="@+id/BtnSaldo"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="26dp" />
+    </RelativeLayout>
 </RelativeLayout>
