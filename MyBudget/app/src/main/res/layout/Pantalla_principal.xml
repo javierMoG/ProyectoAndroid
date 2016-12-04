@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.gabriel.mybudget.PantallaPrincipal">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="340dp"
+        android:layout_height="500dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnIngresarGasto"
+            android:text="Ingresar Gasto"
+            android:layout_alignTop="@+id/BtnEstablecerIM"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="37dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnEstablecerIM"
+            android:layout_marginTop="60dp"
+            android:text="Establecer presupuesto"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:text="Saldo actual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnSaldo"
+            android:layout_below="@+id/BtnEstablecerIM"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="26dp" />
+
+        <Button
+            android:text="Consultar gastos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Consulta"
+            android:layout_below="@+id/BtnIngresarGasto"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="26dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnConsultaWeb"
+            android:text="Precio del dolar"
+            android:layout_below="@+id/BtnSaldo"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="26dp" />
+    </RelativeLayout>
+</RelativeLayout>

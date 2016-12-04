@@ -6,7 +6,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class ConexionBD extends SQLiteOpenHelper {
 
-    String cadenaCreate="create table if not exists tablaprueba (_id integer primary key autoincrement,tipo text not null, gasto text not null);";
+    String tablaIngreso="create table if not exists ingreso(_id integer primary key autoincrement, cantidad text not null);";
+    String tablaGastos="create table if not exists tablaprueba (_id integer primary key autoincrement,tipo text not null, gasto text not null);";
 
     public ConexionBD(Context context) {
         super(context,"prueba.db", null, 1);
@@ -16,7 +17,8 @@ public class ConexionBD extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // TODO Auto-generated method stub
-        db.execSQL(cadenaCreate);
+        db.execSQL(tablaIngreso);
+        db.execSQL(tablaGastos);
     }
 
     @Override
@@ -24,9 +26,10 @@ public class ConexionBD extends SQLiteOpenHelper {
         // TODO Auto-generated method stub
         //Borra los datos del usuario!!! no usar la siguientes lineas en despliegue de
         //la app
-        String cadenaUpdate="drop table if exists tablaprueba;";
+        String cadenaUpdate="drop table if exists ingreso;";
+        String cadenaUpdate2="drop table if exists tablaprueba;";
         db.execSQL(cadenaUpdate);
+        db.execSQL(cadenaUpdate2);
         onCreate(db);
     }
-
 }

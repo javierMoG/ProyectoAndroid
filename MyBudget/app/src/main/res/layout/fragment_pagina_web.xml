@@ -2,28 +2,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.gabriel.mybudget.Fragmento4">
+    tools:context="com.example.gabriel.mybudget.PaginaWeb">
 
     <!-- TODO: Update blank fragment layout -->
-
-
     <WebView
         android:layout_width="match_parent"
-        android:layout_height="463dp"
-        android:id="@+id/WebView">
+        android:layout_height="434dp"
+        android:id="@+id/WebView"
+        android:layout_above="@+id/button2"
+        android:layout_alignParentTop="true">
     </WebView>
 
     <Button
         android:text="Regresar"
-        android:textSize="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="29dp"
-        android:layout_marginEnd="29dp"
         android:id="@+id/button2"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="19dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="10dp" />
 
 </RelativeLayout>
