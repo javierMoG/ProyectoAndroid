@@ -24,8 +24,6 @@ public class ConexionBD extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // TODO Auto-generated method stub
-        //Borra los datos del usuario!!! no usar la siguientes lineas en despliegue de
-        //la app
         String cadenaUpdate="drop table if exists ingreso;";
         String cadenaUpdate2="drop table if exists tablaprueba;";
         db.execSQL(cadenaUpdate);

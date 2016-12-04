@@ -28,15 +28,13 @@ public class InsertarGasto extends Fragment {
     EditText gastoET;
     InterfazBD iBD;
 
-    public InsertarGasto() {
-        // Required empty public constructor
-    }
+    public InsertarGasto() {}
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View v=inflater.inflate(R.layout.fragment_insertar_gasto, container, false);
 
         guardar = (Button) v.findViewById(R.id.Guardar);
